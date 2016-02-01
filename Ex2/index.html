@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Tenue de compte</title>
+  <link rel="stylesheet" href="CSS/animate.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<header>
+    <strong><h1>Tenue de compte</h1></strong>
+</header>
+
+<body>
+    
+    <div class="container animated bounceInRight">
+        <div class="col-md-2 col-lg-4 col-xs-12">
+            <div id="calcul">
+               <div ng-app="app">
+                    <div ng-controller="appCtrl">
+                        <input ng-model="valeur" placeholder="valeur" id="depense"/>
+                            <button ng-click="addDepense()">Ajouter dépense</button>
+                                    <li ng-repeat="depense in depenses">
+                                        {{ depense.valeur }} <span ng-click="rmDepense($index)"><img src="images/poubelle.jpg" id="poubelle"></img></span>
+                                    </li>
+                                </ul>
+                                <strong>Total des dépenses : {{ total }}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

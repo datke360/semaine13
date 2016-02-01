@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="quiz">
+      <head>
+        <meta charset="utf-8">
+         <title>QCM</title>
+         <link rel="stylesheet" href="CSS/animate.min.css">
+         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+         <link rel="stylesheet" href="CSS/style2.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular.min.js"></script>
+         <script src="script.js"></script>
+
+      </head>
+      
+      <header>
+         <center><img src="images/quiz.jpg"></img></center>
+      </header>
+      
+      
+
+<body ng-controller="QuizController" style="background-size:cover;background-image: url('{{image}}');" >
+		<div class= "quiz" style="display:{{visuel}}">
+			<p class ="domaine">{{domaine}}</p>
+			   <h1>{{questionnaire.question}}</h1>
+			   <form ng-submit="valider()">
+   				<input type="radio" ng-model="reponse" value="reponseA">{{questionnaire.reponseA}}<br>
+   				<input type="radio" ng-model="reponse" value="reponseB">{{questionnaire.reponseB}}<br>
+   				<input type="radio" ng-model="reponse" value="reponseC">{{questionnaire.reponseC}}<br>
+   				<input type="radio" ng-model="reponse" value="reponseD">{{questionnaire.reponseD}}<br>
+   				<input type="submit" value="valider" class="btn btn-success animated infinite rubberBand" id="boutonV">
+			   </form>
+			   
+		</div>
+	
+		<div style="display:{{resultat}}" id="score">
+		   <h1>points:{{points}} / 20</h1>
+	      	<p>{{texte}}</p>
+		</div>
+	
+</body>
+</html> 
